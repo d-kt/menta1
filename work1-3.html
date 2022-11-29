@@ -1,1 +1,28 @@
-text1-3
+<!DOCTYPE html>
+<html lang="ja">
+  <body>
+    <script>
+      const tasklist = ['掃除', '買い物', '散歩'];
+      console.log(
+        '=============================\n現在持っているタスク一覧\n============================='
+      );
+      for (let i = 0; i < tasklist.length; i++) {
+        console.log(i + '：' + tasklist[i]);
+      }
+
+      tasklist.push(prompt('タスクを入力してください'));
+      alert('新しいタスクを追加しました');
+
+      console.log(
+        '=============================\n現在持っているタスク一覧\n============================='
+      );
+      for (let i = 0; i < tasklist.length; i++) {
+        console.log(i + '：' + tasklist[i]);
+      }
+
+      const status = prompt(
+        '「確認,追加,削除,終了」の4ついずれかを入力してください'
+      );
+    </script>
+  </body>
+</html>
