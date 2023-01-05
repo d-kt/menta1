@@ -3,22 +3,23 @@
   <body>
     <script>
       const tasklist = ['掃除', '買い物', '散歩'];
-      console.log(
-        '=============================\n現在持っているタスク一覧\n============================='
-      );
-      for (let i = 0; i < tasklist.length; i++) {
-        console.log(i + '：' + tasklist[i]);
+
+      function output() {
+        console.log(
+          '=============================\n現在持っているタスク一覧\n============================='
+        );
+        for (let i = 0; i < tasklist.length; i++) {
+          console.log(i + '：' + tasklist[i]);
+        }
       }
 
-      tasklist.push(prompt('タスクを入力してください'));
+      output();
+
+      let task = prompt('タスクを入力してください');
+      tasklist.push(task);
       alert('新しいタスクを追加しました');
 
-      console.log(
-        '=============================\n現在持っているタスク一覧\n============================='
-      );
-      for (let i = 0; i < tasklist.length; i++) {
-        console.log(i + '：' + tasklist[i]);
-      }
+      output();
 
       const status = prompt(
         '「確認,追加,削除,終了」の4ついずれかを入力してください'
