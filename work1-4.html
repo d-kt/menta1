@@ -1,1 +1,36 @@
-work1-4
+<!DOCTYPE html>
+<html lang="ja">
+  <body>
+    <script>
+      const tasklist = new Array('机を片付ける', '牛乳を買う', '散歩をする');
+      const ganlelist = new Array('掃除', '買い物', '散歩');
+
+      function output() {
+        console.log(
+          '=============================\n現在持っているタスク一覧\n============================='
+        );
+        for (let i = 0; i < tasklist.length; i++) {
+          console.log(
+            i + '：[内容]' + tasklist[i] + '、[ジャンル]' + ganlelist[i]
+          );
+        }
+      }
+
+      output();
+
+      const task = prompt('タスクを入力してください');
+      tasklist.push(task);
+
+      const ganle = prompt('ジャンルを入力してください');
+      ganlelist.push(ganle);
+
+      alert('新しいタスクを追加しました');
+
+      output();
+
+      const status = prompt(
+        '「確認,追加,削除,終了」の4ついずれかを入力してください'
+      );
+    </script>
+  </body>
+</html>
