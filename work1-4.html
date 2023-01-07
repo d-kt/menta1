@@ -2,31 +2,36 @@
 <html lang="ja">
   <body>
     <script>
-      const tasklist = new Array('机を片付ける', '牛乳を買う', '散歩をする');
-      const ganlelist = new Array('掃除', '買い物', '散歩');
+      const tasklist = [
+        { 掃除: '机を片付ける' },
+        { 買い物: '牛乳を買う' },
+        { 散歩: '散歩をする' },
+      ];
 
-      function output() {
+      function outputArray() {
         console.log(
           '=============================\n現在持っているタスク一覧\n============================='
         );
-        for (let i = 0; i < tasklist.length; i++) {
-          console.log(
-            i + '：[内容]' + tasklist[i] + '、[ジャンル]' + ganlelist[i]
-          );
-        }
+        tasklist.forEach((obj) => {
+          for (const key in obj) {
+            console.log('内容：' + `${obj[key]}` + '、ジャンル：' + `${key}`);
+          }
+        });
       }
 
-      output();
+      outputArray();
 
-      const task = prompt('タスクを入力してください');
-      tasklist.push(task);
+      function addElement() {
+        const task = prompt('タスクを入力してください');
+        const ganle = prompt('ジャンルを入力してください');
 
-      const ganle = prompt('ジャンルを入力してください');
-      ganlelist.push(ganle);
+        tasklist.push({ [ganle]: task });
 
-      alert('新しいタスクを追加しました');
+        alert('新しいタスクを追加しました');
+      }
 
-      output();
+      addElement();
+      outputArray();
 
       const status = prompt(
         '「確認,追加,削除,終了」の4ついずれかを入力してください'
